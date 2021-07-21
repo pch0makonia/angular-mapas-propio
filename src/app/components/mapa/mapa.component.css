@@ -1,0 +1,11 @@
+/* google-map {
+    height: 600px;
+} */
+
+map-info-window {
+    color: black;
+}
+
+.example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+}

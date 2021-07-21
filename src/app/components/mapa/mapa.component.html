@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-title>
+        Mi Mapa
+    </mat-card-title>
+    <mat-card-content>
+
+        <google-map height="600px" width="100%" [center]="center" [zoom]="zoom" (mapClick)="addMarker($event)">
+            <map-marker #marker="mapMarker" *ngFor="let marcador of marcadores; let i=index" [position]="marcador" (mapClick)="openInfoWindow(marker, marcador)">
+                <map-info-window>
+                    <strong>{{ marcadorShow.titulo }}</strong>
+                    <p>
+                        {{ marcadorShow.desc }}
+                    </p>
+                    <div class="example-button-row">
+                        <button (click)="editarMarcador( marcadorShow )" mat-raised-button color="primary" class="md-12">Editar</button>
+                        <button (click)="borrarMarcador( marcadorShow )" mat-raised-button color="warn" class="md-12">Borrar</button>
+                    </div>
+                </map-info-window>
+            </map-marker>
+        </google-map>
+    </mat-card-content>
+</mat-card>
